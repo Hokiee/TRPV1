@@ -61,7 +61,7 @@ def build_scaffold_to_indices(smiles_list):
 
     for idx, smiles in enumerate(smiles_list):
         scaffold = get_bemis_murcko_scaffold(smiles, include_chirality=False)
-        if scaffold:
+        if scaffold is not None:
             scaffold_map[scaffold].add(idx)
 
     return scaffold_map
